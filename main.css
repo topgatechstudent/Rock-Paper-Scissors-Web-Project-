@@ -30,7 +30,7 @@ button {
     animation-duration: 1s;
 }
 
-button:hover {
+.hover:hover {
     animation: tilt-n-move-shaking 1s;
 }
 

@@ -13,6 +13,8 @@ function gameHandler() {
 }
 
 function animationHandler(winner, loser) {
+    winner.classList.remove("hover");
+    loser.classList.remove("hover");
     winner.classList.add("bounce");
     loser.classList.add("bounce");
     setTimeout(function () {
@@ -21,6 +23,8 @@ function animationHandler(winner, loser) {
         loser.classList.add("lose");
         setTimeout(function () {
             loser.classList.remove("lose");
+            winner.classList.add("hover");
+            loser.classList.add("hover");
         }, 1000);
     }, 3000);
 }
