@@ -1,6 +1,145 @@
+html,
 body {
-    height: 100vh;
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+}
+
+body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #FFF1D0;
+}
+
+#choices {
+    width: 70%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+}
+
+button {
+    border: none;
+    background: none;
+    transform-origin: bottom;
+    animation-duration: 1s;
+}
+
+button:hover {
+    animation: tilt-n-move-shaking 1s;
+}
+
+.bounce {
+    animation-name: bounce;
+    animation-iteration-count: 3;
+    animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+}
+
+.lose {
+    animation-name: slideInDown;
+}
+
+@keyframes slideInDown {
+    0% {
+        transform: translate(0, 0) rotate(10deg);
+    }
+
+    10% {
+        transform: translate(0, 10%);
+    }
+
+    20% {
+        transform: translate(0, 20%) rotate(-10deg);
+    }
+
+    30% {
+        transform: translate(0, 30%);
+    }
+
+    40% {
+        transform: translate(0, 40%) rotate(10deg);
+    }
+
+    50% {
+        transform: translate(0, 50%);
+        opacity: 1;
+    }
+
+    60% {
+        transform: translate(0, 60%) rotate(-10deg);
+    }
+
+    70% {
+        transform: translate(0, 70%);
+    }
+
+    80% {
+        transform: translate(0, 80%) rotate(10deg);
+    }
+
+    90% {
+        transform: translate(0, 90%);
+    }
+
+    100% {
+        transform: translate(0, 100%) rotate(-10deg);
+        opacity: 0;
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(1, 1) translateY(0);
+    }
+
+    10% {
+        transform: scale(1.1, .9) translateY(0);
+    }
+
+    30% {
+        transform: scale(.9, 1.1) translateY(-100px);
+    }
+
+    50% {
+        transform: scale(1.05, .95) translateY(0);
+    }
+
+    57% {
+        transform: scale(1, 1) translateY(-7px);
+    }
+
+    64% {
+        transform: scale(1, 1) translateY(0);
+    }
+
+    100% {
+        transform: scale(1, 1) translateY(0);
+    }
+}
+
+@keyframes tilt-n-move-shaking {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    25% {
+        transform: translate(5px, 5px) rotate(5deg);
+    }
+
+    50% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    75% {
+        transform: translate(-5px, 5px) rotate(-5deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
 }
