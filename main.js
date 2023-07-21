@@ -12,7 +12,13 @@ function gameHandler() {
     }));
 }
 
-function animationHandler(winner, loser) {
+function animationHandler(winner, loser, decision) {
+    const decisionDiv = document.createElement("div");
+    const resetButton = document.createElement("button");
+    decisionDiv.textContent = decision;
+    resetButton.textContent = "Play Again.";
+    resetButton.id = "resetButton";
+    decisionDiv.appendChild(resetButton);
     winner.classList.remove("hover");
     loser.classList.remove("hover");
     winner.classList.add("bounce");
@@ -25,8 +31,12 @@ function animationHandler(winner, loser) {
             loser.classList.remove("lose");
             winner.classList.add("hover");
             loser.classList.add("hover");
+            loser.replaceWith(decisionDiv);
         }, 1000);
     }, 3000);
+    resetButton.addEventListener("click", function () {
+        window.location.reload();
+    })
 }
 
 function winnerCalculator(playerChoice, computerChoice) {
@@ -35,26 +45,26 @@ function winnerCalculator(playerChoice, computerChoice) {
     } else if (playerChoice == "rock") {
         if (computerChoice == "paper") {
             alert("You Lose");
-            animationHandler(paperButton, rockButton);
+            animationHandler(paperButton, rockButton, "You Lose!");
         } else {
             alert("You Win");
-            animationHandler(rockButton, scissorButton);
+            animationHandler(rockButton, scissorButton, "You Win!");
         }
     } else if (playerChoice == "paper") {
         if (computerChoice == "scissors") {
             alert("You Lose");
-            animationHandler(scissorButton, paperButton);
+            animationHandler(scissorButton, paperButton, "You Lose!");
         } else {
             alert("You Win");
-            animationHandler(paperButton, rockButton);
+            animationHandler(paperButton, rockButton, "You Win!");
         }
     } else {
         if (computerChoice == "rock") {
             alert("You Lose");
-            animationHandler(rockButton, scissorButton);
+            animationHandler(rockButton, scissorButton, "You Lose!");
         } else {
             alert("You Win");
-            animationHandler(scissorButton, paperButton);
+            animationHandler(scissorButton, paperButton, "You Win!");
         }
     }
 }
