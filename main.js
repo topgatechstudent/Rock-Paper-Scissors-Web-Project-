@@ -12,6 +12,10 @@ function gameHandler() {
     }));
 }
 
+function disableNextButton(btn) {
+    document.btn.disabled = 'true';
+}
+
 function animationHandlerTie(button) {
     const decisionDiv = document.createElement("div");
     const resetButton = document.createElement("button");
