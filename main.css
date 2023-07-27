@@ -230,3 +230,27 @@ div {
         transform: translate(0, 0) rotate(0deg);
     }
 }
+
+@media screen and (max-width: 768px) {
+    #choices {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    div {
+        height: 80px;
+        width: 80px;
+        font-size: 1em;
+    }
+
+    #resetButton {
+        font-size: 0.4em;
+        margin-top: 10px;
+    }
+
+    img {
+        width: 80px;
+        height: 80px;
+    }
+}
