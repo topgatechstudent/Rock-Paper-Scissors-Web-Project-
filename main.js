@@ -9,11 +9,14 @@ function gameHandler() {
         const computerNumber = Math.floor(Math.random() * 3);
         let computerChoice = computerOptions[computerNumber];
         winnerCalculator(option.value, computerChoice, option);
+        disableAllButtons();
     }));
 }
-
-function disableNextButton(btn) {
-    document.btn.disabled = 'true';
+//function that disables all buttons after one is clicked
+function disableAllButtons() {
+    document.getElementById("rock").disabled = 'true';
+    document.getElementById("paper").disabled = 'true';
+    document.getElementById("scissors").disabled = 'true';
 }
 
 function animationHandlerTie(button) {
